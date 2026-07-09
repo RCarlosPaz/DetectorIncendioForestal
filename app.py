@@ -12,7 +12,7 @@ import gdown # Necesitas instalar 'gdown' en tu entorno de Streamlit
 device = torch.device('cpu') # En Streamlit Cloud, es más probable que uses CPU
 
 # --- ID del archivo de Google Drive para el modelo --- ¡IMPORTANTE! MODIFICA ESTO
-GOOGLE_DRIVE_FILE_ID = 'https://drive.google.com/file/d/1yGrCzqzodIgO8RiwtKZUp-8YNjZl6sGR/view' # <<< REEMPLAZA CON EL ID DE TU ARCHIVO
+GOOGLE_DRIVE_FILE_ID = '1yGrCzqzodIgO8RiwtKZUp-8YNjZl6sGR' # <<< REEMPLAZA CON EL ID DE TU ARCHIVO
 MODEL_PATH = 'resnet18_biclase.pth'
 
 # --- Definición de la arquitectura del modelo (DEBE SER LA MISMA QUE SE ENTRENÓ) ---
