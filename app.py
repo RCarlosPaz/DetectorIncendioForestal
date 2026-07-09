@@ -112,6 +112,11 @@ if uploaded_file is not None:
         else:
             st.info(f"Predicción: **No se detectó fuego.**")
         st.write(f"Confianza: {confidence:.2f}%")
+        
+        st.markdown("--- ")
+        st.subheader("Probabilidades Completas:")
+        for i, class_name in enumerate(clases):
+            st.write(f"**{class_name.capitalize()}**: {probabilities[0][i].item()*100:.2f}%")
 
     st.markdown("--- ")
     st.caption("*Nota: La precisión del modelo puede variar. Usa esto como una herramienta de apoyo.*")
