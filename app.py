@@ -12,7 +12,7 @@ import gdown # Necesitas instalar 'gdown' en tu entorno de Streamlit
 device = torch.device('cpu') # En Streamlit Cloud, es más probable que uses CPU
 
 # --- ID del archivo de Google Drive para el modelo --- ¡IMPORTANTE! MODIFICA ESTO
-GOOGLE_DRIVE_FILE_ID = '1yGrCzqzodIgO8RiwtKZUp-8YNjZl6sGR' # <<< REEMPLAZA CON EL ID DE TU ARCHIVO
+GOOGLE_DRIVE_FILE_ID = '15RPmKoL2vrDpYSeuAFS0dZRyu_DSvPUE' # <<< REEMPLAZA CON EL ID DE TU ARCHIVO
 MODEL_PATH = 'resnet18_biclase.pth'
 
 # --- Definición de la arquitectura del modelo (DEBE SER LA MISMA QUE SE ENTRENÓ) ---
@@ -72,7 +72,7 @@ st.markdown("Una aplicación para detectar fuego en imágenes usando un modelo R
 st.sidebar.header("Acerca de")
 st.sidebar.markdown("Esta aplicación utiliza un modelo de redes neuronales convolucionales (CNN) basado en ResNet18 para clasificar imágenes. El modelo ha sido entrenado para distinguir entre imágenes con **fuego** y sin **fuego**.")
 st.sidebar.markdown("\n\n**Cómo usar:**\n1. Sube una imagen en la sección principal.\n2. La aplicación mostrará la imagen y la predicción del modelo.\n")
-# st.sidebar.markdown("--- desarrollado con ❤️ y PyTorch")
+st.sidebar.markdown("--- desarrollado con ❤️ y PyTorch")
 
 st.header("Sube tu imagen aquí")
 uploaded_file = st.file_uploader("Elige una imagen...", type=["jpg", "jpeg", "png"])
@@ -112,7 +112,7 @@ if uploaded_file is not None:
         else:
             st.info(f"Predicción: **No se detectó fuego.**")
         st.write(f"Confianza: {confidence:.2f}%")
-        
+
         st.markdown("--- ")
         st.subheader("Probabilidades Completas:")
         for i, class_name in enumerate(clases):
