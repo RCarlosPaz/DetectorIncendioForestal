@@ -72,7 +72,7 @@ st.markdown("Una aplicación para detectar fuego en imágenes usando un modelo R
 st.sidebar.header("Acerca de")
 st.sidebar.markdown("Esta aplicación utiliza un modelo de redes neuronales convolucionales (CNN) basado en ResNet18 para clasificar imágenes. El modelo ha sido entrenado para distinguir entre imágenes con **fuego** y sin **fuego**.")
 st.sidebar.markdown("\n\n**Cómo usar:**\n1. Sube una imagen en la sección principal.\n2. La aplicación mostrará la imagen y la predicción del modelo.\n")
-st.sidebar.markdown("--- desarrollado con ❤️ y PyTorch")
+# st.sidebar.markdown("--- desarrollado con ❤️ y PyTorch")
 
 st.header("Sube tu imagen aquí")
 uploaded_file = st.file_uploader("Elige una imagen...", type=["jpg", "jpeg", "png"])
