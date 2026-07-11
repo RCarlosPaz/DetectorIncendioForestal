@@ -81,7 +81,7 @@ clases = ['fire', 'nofire'] # Asegúrate de que esto coincida con train_dataset.
 # --- Interfaz de Streamlit ---
 st.set_page_config(page_title="Clasificador de Fuego", page_icon="🔥")
 
-st.title("🔥 Identificador de Fuego (Biclase)")
+st.title("🔥 Identificador de incendio forestal")
 st.markdown("Una aplicación para detectar fuego en imágenes usando un modelo ResNet18 pre-entrenado.")
 
 # "Cómo usar" en un recuadro minimalista en el área principal
