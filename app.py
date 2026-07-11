@@ -29,8 +29,8 @@ def load_model():
             st.stop() # Detiene la aplicación si no se puede descargar el modelo
 
     # Cargar la estructura de ResNet18 CON pesos pre-entrenados de ImageNet
-    pesos = models.ResNet18_Weights.DEFAULT # << CAMBIO AQUI
-    model = models.resnet18(weights=pesos) # << CAMBIO AQUI
+    pesos = models.ResNet18_Weights.DEFAULT
+    model = models.resnet18(weights=pesos)
 
     # Congelar las capas base (aunque no entrenaremos, es buena práctica mantener la misma estructura)
     for param in model.parameters():
@@ -42,7 +42,22 @@ def load_model():
 
     # Cargar los pesos entrenados
     try:
-        model.load_state_dict(torch.load(MODEL_PATH, map_location=device))
+        # Load the state_dict separately to inspect
+        loaded_state_dict = torch.load(MODEL_PATH, map_location=device)
+
+        # --- Debugging: Compare state_dict keys and shapes ---
+        st.write("--- Debugging Model Load ---")
+        st.write("Model's state_dict keys:", model.state_dict().keys())
+        st.write("Loaded state_dict keys:", loaded_state_dict.keys())
+
+        # Check for fc layer weight shapes if present
+        if 'fc.weight' in model.state_dict() and 'fc.weight' in loaded_state_dict:
+            st.write("Model fc.weight shape:", model.fc.weight.shape)
+            st.write("Loaded fc.weight shape:", loaded_state_dict['fc.weight'].shape)
+        st.write("--------------------------")
+        # --- End Debugging ---
+
+        model.load_state_dict(loaded_state_dict)
     except FileNotFoundError:
         st.error(f"Error: El archivo del modelo '{MODEL_PATH}' no se encontró después de la descarga.")
         st.stop()
