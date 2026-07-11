@@ -92,7 +92,6 @@ with st.expander("💡 Cómo usar esta aplicación:"):
     )
 
 # Barra lateral
-st.sidebar.header("Acerca de")
 st.sidebar.markdown(
     "### Recomendaciones breves para prevenir incendios forestales\n\n"
     "Para evitar incendios, recuerda:\n"
