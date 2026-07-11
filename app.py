@@ -28,8 +28,9 @@ def load_model():
             st.error(f"Error al descargar el modelo de Google Drive: {e}")
             st.stop() # Detiene la aplicación si no se puede descargar el modelo
 
-    # Cargar la estructura de ResNet18
-    model = models.resnet18(weights=None) # No necesitamos los pesos pre-entrenados de ImageNet aquí
+    # Cargar la estructura de ResNet18 CON pesos pre-entrenados de ImageNet
+    pesos = models.ResNet18_Weights.DEFAULT # << CAMBIO AQUI
+    model = models.resnet18(weights=pesos) # << CAMBIO AQUI
 
     # Congelar las capas base (aunque no entrenaremos, es buena práctica mantener la misma estructura)
     for param in model.parameters():
