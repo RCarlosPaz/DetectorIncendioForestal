@@ -94,8 +94,6 @@ with st.expander("💡 Cómo usar esta aplicación:"):
 # Barra lateral
 st.sidebar.header("Acerca de")
 st.sidebar.markdown(
-    "Esta aplicación utiliza un modelo de redes neuronales convolucionales (CNN) basado en ResNet18 para clasificar imágenes. "
-    "El modelo ha sido entrenado para distinguir entre imágenes con **fuego** y sin **fuego**.\n\n"
     "### Recomendaciones breves para prevenir incendios forestales\n\n"
     "Para evitar incendios, recuerda:\n"
     "*   No arrojes colillas ni fósforos. Apaga bien las fogatas.\n"
@@ -105,7 +103,7 @@ st.sidebar.markdown(
     "*   Reporta cualquier humo o fuego de inmediato.\n"
     "*   Educa y comparte estas precauciones.\n"
 )
-st.sidebar.markdown("--- desarrollado con ❤️ y PyTorch")
+
 
 st.header("Sube tu imagen aquí")
 uploaded_file = st.file_uploader("Elige una imagen...", type=["jpg", "jpeg", "png"])
