@@ -46,15 +46,15 @@ def load_model():
         loaded_state_dict = torch.load(MODEL_PATH, map_location=device)
 
         # --- Debugging: Compare state_dict keys and shapes ---
-       # st.write("--- Debugging Model Load ---")
-       # st.write("Model's state_dict keys:", model.state_dict().keys())
-       # st.write("Loaded state_dict keys:", loaded_state_dict.keys())
+        # st.write("--- Debugging Model Load ---")
+        # st.write("Model's state_dict keys:", model.state_dict().keys())
+        # st.write("Loaded state_dict keys:", loaded_state_dict.keys())
 
         # Check for fc layer weight shapes if present
-        if 'fc.weight' in model.state_dict() and 'fc.weight' in loaded_state_dict:
-            st.write("Model fc.weight shape:", model.fc.weight.shape)
-            st.write("Loaded fc.weight shape:", loaded_state_dict['fc.weight'].shape)
-        st.write("--------------------------")
+        # if 'fc.weight' in model.state_dict() and 'fc.weight' in loaded_state_dict:
+        #     st.write("Model fc.weight shape:", model.fc.weight.shape)
+        #     st.write("Loaded fc.weight shape:", loaded_state_dict['fc.weight'].shape)
+        # st.write("--------------------------")
         # --- End Debugging ---
 
         model.load_state_dict(loaded_state_dict)
@@ -136,3 +136,4 @@ if uploaded_file is not None:
 
     st.markdown("--- ")
     st.caption("*Nota: La precisión del modelo puede variar. Usa esto como una herramienta de apoyo.*")
+
