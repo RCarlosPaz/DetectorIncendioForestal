@@ -81,14 +81,21 @@ clases = ['fire', 'nofire'] # Asegúrate de que esto coincida con train_dataset.
 # --- Interfaz de Streamlit ---
 st.set_page_config(page_title="Clasificador de Fuego", page_icon="🔥")
 
-st.title("🔥 Clasificador de Fuego (Biclase)")
+st.title("🔥 Identificador de Fuego (Biclase)")
 st.markdown("Una aplicación para detectar fuego en imágenes usando un modelo ResNet18 pre-entrenado.")
 
+# "Cómo usar" en un recuadro minimalista en el área principal
+with st.expander("💡 Cómo usar esta aplicación:"):
+    st.markdown(
+        "1. Sube una imagen (JPG, JPEG, PNG) en la sección 'Sube tu imagen aquí'.\n"
+        "2. La aplicación procesará la imagen y te mostrará la predicción del modelo (si hay fuego o no)."
+    )
+
 # Barra lateral
-#st.sidebar.header("Acerca de")
+st.sidebar.header("Acerca de")
 st.sidebar.markdown(
-    # "Esta aplicación utiliza un modelo de redes neuronales convolucionales (CNN) basado en ResNet18 para clasificar imágenes. "
-    # "El modelo ha sido entrenado para distinguir entre imágenes con **fuego** y sin **fuego**.\n\n"
+    "Esta aplicación utiliza un modelo de redes neuronales convolucionales (CNN) basado en ResNet18 para clasificar imágenes. "
+    "El modelo ha sido entrenado para distinguir entre imágenes con **fuego** y sin **fuego**.\n\n"
     "### Recomendaciones breves para prevenir incendios forestales\n\n"
     "Para evitar incendios, recuerda:\n"
     "*   No arrojes colillas ni fósforos. Apaga bien las fogatas.\n"
@@ -98,7 +105,6 @@ st.sidebar.markdown(
     "*   Reporta cualquier humo o fuego de inmediato.\n"
     "*   Educa y comparte estas precauciones.\n"
 )
-st.sidebar.markdown("\n\n**Cómo usar:**\n1. Sube una imagen en la sección principal.\n2. La aplicación mostrará la imagen y la predicción del modelo.\n")
 st.sidebar.markdown("--- desarrollado con ❤️ y PyTorch")
 
 st.header("Sube tu imagen aquí")
