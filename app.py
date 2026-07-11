@@ -85,19 +85,18 @@ st.title("🔥 Clasificador de Fuego (Biclase)")
 st.markdown("Una aplicación para detectar fuego en imágenes usando un modelo ResNet18 pre-entrenado.")
 
 # Barra lateral
-st.sidebar.header("Acerca de")
+#st.sidebar.header("Acerca de")
 st.sidebar.markdown(
-    "Esta aplicación utiliza un modelo de redes neuronales convolucionales (CNN) basado en ResNet18 para clasificar imágenes. "
-    "El modelo ha sido entrenado para distinguir entre imágenes con **fuego** y sin **fuego**.\n\n"
-    "### Recomendaciones para evitar incendios forestales\n\n"
-    "Los incendios forestales son un problema grave que afecta a la biodiversidad, la calidad del aire y la seguridad de las comunidades. Todos podemos contribuir a prevenirlos siguiendo estas sencillas recomendaciones:\n\n"
-    "1.  **No arrojes colillas de cigarrillos ni fósforos** en el bosque o zonas con vegetación seca. Asegúrate de apagarlos correctamente y depositarlos en un lugar seguro.\n"
-    "2.  **Evita encender fogatas en zonas no autorizadas** o en días de mucho viento. Si enciendes una, asegúrate de que esté completamente apagada y fría antes de retirarte.\n"
-    "3.  **No quemes basura o rastrojos** sin las debidas precauciones y permisos. Las quemas agrícolas descontroladas son una causa común de incendios.\n"
-    "4.  **Mantén limpios los alrededores de tu vivienda**, eliminando maleza, hojas secas y otros materiales inflamables.\n"
-    "5.  **No tires botellas o trozos de vidrio** en el bosque, ya que pueden actuar como lupas y provocar un \"efecto lupa\" que inicie un fuego.\n"
-    "6.  **Reporta inmediatamente cualquier columna de humo o incendio** al servicio de emergencias. Tu rápida acción puede salvar vidas y ecosistemas.\n"
-    "7.  **Educa a otros** sobre la importancia de la prevención de incendios forestales."
+    # "Esta aplicación utiliza un modelo de redes neuronales convolucionales (CNN) basado en ResNet18 para clasificar imágenes. "
+    # "El modelo ha sido entrenado para distinguir entre imágenes con **fuego** y sin **fuego**.\n\n"
+    "### Recomendaciones breves para prevenir incendios forestales\n\n"
+    "Para evitar incendios, recuerda:\n"
+    "*   No arrojes colillas ni fósforos. Apaga bien las fogatas.\n"
+    "*   No quemes basura sin control.\n"
+    "*   Mantén tu entorno limpio de maleza.\n"
+    "*   Evita tirar vidrios en el bosque.\n"
+    "*   Reporta cualquier humo o fuego de inmediato.\n"
+    "*   Educa y comparte estas precauciones.\n"
 )
 st.sidebar.markdown("\n\n**Cómo usar:**\n1. Sube una imagen en la sección principal.\n2. La aplicación mostrará la imagen y la predicción del modelo.\n")
 st.sidebar.markdown("--- desarrollado con ❤️ y PyTorch")
